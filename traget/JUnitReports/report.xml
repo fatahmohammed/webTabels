@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="38.167" tests="8" skipped="0" failures="3" errors="0">
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Ajouter un employé avec des informations valides" time="6.526">
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur "Add".........................................passed
+And L'utilisateur remplit le formulaire avec des informations :.............passed
+And L'utilisateur "soumet" le formulaire....................................passed
+Then Le nouvel "employé"  doit apparaître dans le tableau...................passed
+And Les "informations de l'employé" dans le tableau doivent correspondre à celles saisies dans le formulaire.passed
+And Le tableau doit se mettre à jour en temps réel sans rechargement de la page.passed
+]]></system-out>
+</testcase>
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Ajouter un employé avec des informations non valides" time="5.783">
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur "Add".........................................passed
+And L'utilisateur remplit le formulaire avec des informations :.............passed
+And L'utilisateur "soumet" le formulaire....................................passed
+Then Des "messages d'erreur" doivent s'afficher pour chaque champ manquant ou invalide.passed
+And Aucun "employé" ne doit être ajouté au tableau..........................passed
+And Le tableau doit rester inchangé.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Ajouter un employé avec des informations non valides" time="4.023">
+<failure type="java.lang.AssertionError" message="Erreur : L'employé avec First Name : zelie a été ajouté au tableau malgré des données invalides">
+<![CDATA[java.lang.AssertionError: Erreur : L'employé avec First Name : zelie a été ajouté au tableau malgré des données invalides
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at POM.WebTables.ilExisitPasDansLaTable(WebTables.java:178)
+	at ✽.Aucun "employé" ne doit être ajouté au tableau(file:///D:/niji/WebTables/src/test/Configuration/resources/TableauDynamique.feature:41)
+]]>
+</failure>
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur "Add".........................................passed
+And L'utilisateur remplit le formulaire avec des informations :.............passed
+And L'utilisateur "soumet" le formulaire....................................passed
+Then Des "messages d'erreur" doivent s'afficher pour chaque champ manquant ou invalide.passed
+And Aucun "employé" ne doit être ajouté au tableau..........................failed
+And Le tableau doit rester inchangé.........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Modifier un employé existant avec des informations valides" time="4.758">
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur l'icône d'édition pour l'employé suivant......passed
+And L'utilisateur remplit le formulaire avec des informations :.............passed
+And L'utilisateur "soumet" le formulaire....................................passed
+Then Les mise a jour sur l'employé doit apparaître dans le tableau..........passed
+And Les "informations de l'employé" dans le tableau doivent correspondre à celles saisies dans le formulaire.passed
+And Le tableau doit se mettre à jour en temps réel sans rechargement de la page.passed
+]]></system-out>
+</testcase>
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Modifier un employé existant avec des informations non valides" time="4.404">
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur l'icône d'édition pour l'employé suivant......passed
+And L'utilisateur remplit le formulaire avec des informations :.............passed
+And L'utilisateur "soumet" le formulaire....................................passed
+Then Des "messages d'erreur" doivent s'afficher pour chaque champ manquant ou invalide.passed
+And Les informations de l'employé ne doivent pas être mises à jour dans le tableau.passed
+And Le tableau doit rester inchangé.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Ajouter un employé avec des informations non valides" time="2.93">
+<failure type="java.lang.AssertionError" message="Erreur : L'employé avec First Name : DJABOURI a été ajouté au tableau malgré des données invalides">
+<![CDATA[java.lang.AssertionError: Erreur : L'employé avec First Name : DJABOURI a été ajouté au tableau malgré des données invalides
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at POM.WebTables.ilExisitPasDansLaTable(WebTables.java:178)
+	at ✽.Aucun "employé" ne doit être ajouté au tableau(file:///D:/niji/WebTables/src/test/Configuration/resources/TableauDynamique.feature:78)
+]]>
+</failure>
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur "Add".........................................passed
+And L'utilisateur remplit le formulaire avec des informations :.............passed
+And L'utilisateur "soumet" le formulaire....................................passed
+Then Des "messages d'erreur" doivent s'afficher pour chaque champ manquant ou invalide.passed
+And Aucun "employé" ne doit être ajouté au tableau..........................failed
+And Le tableau doit rester inchangé.........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Supprimer un employé non présent dans le tableau" time="0.496">
+<failure type="java.lang.AssertionError" message="Erreur : Employee existe pas">
+<![CDATA[java.lang.AssertionError: Erreur : Employee existe pas
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at POM.WebTables.clickInconeSup(WebTables.java:218)
+	at ✽.L'utilisateur clique sur l'icône supprimer pour l'employé suivant(file:///D:/niji/WebTables/src/test/Configuration/resources/TableauDynamique.feature:83)
+]]>
+</failure>
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur l'icône supprimer pour l'employé suivant......failed
+Then L'employé en question ne doit plus être présent dans le tableau........skipped
+And Le tableau doit se mettre à jour en temps réel après suppression  sans rechargement de la page.skipped
+]]></system-out>
+</testcase>
+<testcase classname="Gestion d'un tableau dynamique des employés." name="Supprimer un employé présent dans le tableau" time="0.855">
+<system-out><![CDATA[
+Given L'utilisateur est sur la page de gestion des employés.................passed
+When L'utilisateur clique sur l'icône supprimer pour l'employé suivant......passed
+Then L'employé en question ne doit plus être présent dans le tableau........passed
+And Le tableau doit se mettre à jour en temps réel après suppression  sans rechargement de la page.passed
+]]></system-out>
+</testcase>
+</testsuite>
