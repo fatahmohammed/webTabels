@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
                 "json:traget/JSONReports/report.json",
                 "html:traget/HTMLReports/report.html"},
         tags = " @SmokeFeature "
-
+//*
 )
 public class TestRun {
 }
